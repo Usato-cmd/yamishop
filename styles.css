@@ -1,0 +1,705 @@
+@charset "UTF-8";
+* {
+  position: relative;
+  z-index: 5;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  background-color: #2ad167;
+}
+.header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.header__logo svg {
+  width: 60px;
+  height: 60px;
+  margin-top: 15px;
+  color: white;
+}
+.header__title_txt {
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+}
+
+.banner {
+  background-color: #C0C0C0;
+  backdrop-filter: blur(50px);
+  border: 3px solid white;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.3s;
+}
+.banner:hover::after {
+  left: 100%;
+}
+.banner__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.banner__navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+.banner__navbar_link {
+  color: white;
+  font-weight: 600;
+}
+
+.accueil_1 {
+  background-color: white;
+}
+.accueil_1__content {
+  width: 100%;
+}
+.accueil_1__title {
+  text-align: center;
+}
+.accueil_1__title_txt {
+  color: #2ad167;
+  font-size: 50px;
+}
+.accueil_1__title svg {
+  width: 100px;
+  height: 100px;
+  color: #2ad167;
+}
+
+/*Accueil Diapo*/
+.accueil__article {
+  padding: 25px;
+  margin-top: 80px;
+  background-color: #2ad167;
+}
+.accueil__article_content {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+.accueil__article_content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/*Accueil Slogan*/
+.accueil__slogan {
+  background-color: white;
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.accueil__slogan_content {
+  width: 100%;
+  display: flex;
+}
+.accueil__slogan_img {
+  width: 50%;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230714/pngtree-st-patrick-s-day-ecommerce-shop-and-deliver-via-mobile-app-image_3859384.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.accueil__slogan_txt {
+  padding: 0 25px;
+  background-color: #F5F5DC;
+}
+.accueil__slogan_txt_1 {
+  font-size: 55px;
+  font-family: Lato;
+  color: #2c8279;
+  font-weight: 900;
+  text-align: left;
+}
+.accueil__slogan_txt_2 {
+  text-align: left;
+  font-family: Lato;
+  font-size: 25px;
+}
+.accueil__slogan_txt svg {
+  width: 60px;
+  height: 60px;
+  color: #2c8279;
+}
+
+/*Accueil Us*/
+/*Accueil Us*/
+.accueil__us {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+.accueil__us_content {
+  padding: 15px 35px;
+  border-radius: 20px;
+  background-color: #F5F5DC;
+}
+.accueil__us h2 {
+  color: #2c8279;
+  font-size: 40px;
+}
+.accueil__us span {
+  color: #2c8279;
+  font-size: 20px;
+}
+.accueil__us_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+.accueil__us_box_rec {
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 15px 15px;
+  background-color: #2ad167;
+}
+.accueil__us_box_rec svg {
+  width: 60px;
+  height: 60px;
+  color: white;
+}
+.accueil__us_box_rec p {
+  color: white;
+}
+
+/*Accueil Market*/
+.accueil__market {
+  background-color: white;
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.accueil__market_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.accueil__market_txt {
+  padding: 15px 25px;
+  width: 50%;
+  left: 0;
+  background-color: #F5F5DC;
+  border-radius: 20px;
+}
+.accueil__market_txt h2 {
+  font-size: 50px;
+  font-family: Lato;
+  color: #2c8279;
+}
+.accueil__market_txt p {
+  font-size: 20px;
+}
+.accueil__market_txt svg {
+  width: 60px;
+  height: 60px;
+  color: #2c8279;
+}
+.accueil__market_img {
+  right: 0;
+  width: 45%;
+  height: 500px;
+}
+.accueil__market_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Accueil connection*/
+.accueil__connection {
+  background-color: #2ad167;
+}
+.accueil__connection_content {
+  padding: 15px 25px;
+  margin-top: 80px;
+}
+.accueil__connection_content p {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+.accueil__connection_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+.accueil__connection_button_login {
+  background-color: #2ad167;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 55px;
+  cursor: pointer;
+}
+.accueil__connection_button_login a {
+  color: white;
+}
+.accueil__connection_button_signin {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 55px;
+  cursor: pointer;
+}
+.accueil__connection_button_signin a {
+  color: #2ad167;
+}
+
+/*Catalogue title*/
+.catalogue__title {
+  background-color: white;
+}
+.catalogue__title_content {
+  margin-top: 40px;
+  padding: 35px;
+}
+.catalogue__title_content h2 {
+  font-size: 50px;
+  color: #2c8279;
+}
+.catalogue__title_content span {
+  position: absolute;
+  width: 96%;
+  height: 1px;
+  background-color: #2c8279;
+}
+
+/*Legume Title*/
+.legume__title {
+  background-color: white;
+}
+.legume__title_content {
+  margin-top: 40px;
+  padding: 35px;
+}
+.legume__title_content h2 {
+  font-size: 50px;
+  color: #2c8279;
+}
+.legume__title_content span {
+  position: absolute;
+  width: 96%;
+  height: 1px;
+  background-color: #2c8279;
+}
+.legume__title_content svg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  left: 75%;
+  color: #2c8279;
+  top: 20px;
+}
+
+/*Page d'inscription sur la plateforme*/
+.inscription__content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5dc;
+}
+
+.inscription_formulaire {
+  padding: 200px 0px;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inscription_formulaire_box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 10px;
+}
+.inscription_formulaire_box1_logo {
+  background-color: #28c663;
+  width: 60px;
+  height: 60px;
+  padding: 5px 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inscription_formulaire_box1_logo svg {
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+.inscription_formulaire_box1_logo p {
+  color: #74849d;
+}
+.inscription_formulaire_box2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inscription_formulaire_box2 input {
+  width: 80%;
+  height: 30px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.inscription_formulaire_box2 p {
+  font-size: 18px;
+}
+.inscription_formulaire_box2_button {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.inscription_formulaire_box2_button a {
+  color: white;
+  font-size: 17px;
+}
+.inscription_formulaire_box2_button_signin {
+  background-color: #28c663;
+  width: 82%;
+  height: 37px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.inscription_img {
+  width: 50%;
+  height: 50%;
+}
+.inscription_img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/*Page de connection sur la plateforme */
+.connection__content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5dc;
+}
+
+.connection_formulaire {
+  padding: 200px 0px;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.connection_formulaire_box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 10px;
+}
+.connection_formulaire_box1_logo {
+  background-color: #28c663;
+  width: 60px;
+  height: 60px;
+  padding: 5px 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.connection_formulaire_box1_logo svg {
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+.connection_formulaire_box1_logo p {
+  color: #74849d;
+}
+.connection_formulaire_box2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.connection_formulaire_box2 input {
+  width: 80%;
+  height: 30px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.connection_formulaire_box2 p {
+  font-size: 18px;
+}
+.connection_formulaire_box2_button {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.connection_formulaire_box2_button a {
+  color: white;
+  font-size: 17px;
+}
+.connection_formulaire_box2_button_login {
+  background-color: #28c663;
+  width: 82%;
+  height: 37px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.connection_img {
+  width: 50%;
+  height: 50%;
+}
+.connection_img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/*Gesion Title (les produits)*/
+.gestion__title {
+  background-color: white;
+}
+.gestion__title_content {
+  margin-top: 40px;
+  padding: 35px;
+  text-align: center;
+}
+.gestion__title_content h2 {
+  font-size: 50px;
+  color: #2c8279;
+}
+
+/*Gesion Title (les catégories)*/
+.catégorie__title {
+  background-color: white;
+}
+.catégorie__title_content {
+  margin-top: 40px;
+  padding: 35px;
+  text-align: center;
+}
+.catégorie__title_content h2 {
+  font-size: 50px;
+  color: #2c8279;
+}
+
+/*Gestion Formulaire (Les Catégories)*/
+.catégorie_gestion_content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #2c8279;
+  background-color: #f5f5dc;
+  width: 100%;
+}
+.catégorie_gestion_content form label, .catégorie_gestion_content form input, .catégorie_gestion_content form textarea, .catégorie_gestion_content form button {
+  display: block;
+  margin: 10px 0;
+}
+.catégorie_gestion_content form input {
+  width: 100%;
+  height: 30px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.catégorie_gestion_content form label {
+  font-size: 18px;
+  color: #2c8279;
+}
+.catégorie_gestion_content form textarea {
+  width: 100%;
+  height: 70px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.catégorie_gestion_content form button {
+  padding: 1px;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c8279;
+  cursor: pointer;
+}
+.catégorie_gestion_content form button p {
+  color: white;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+/*Gestion Formulaire (Les produits)*/
+.formulaire_gestion_content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #2c8279;
+  background-color: #f5f5dc;
+  width: 100%;
+}
+.formulaire_gestion_content form label, .formulaire_gestion_content form input, .formulaire_gestion_content form textarea, .formulaire_gestion_content form button {
+  display: block;
+  margin: 10px 0;
+}
+.formulaire_gestion_content form input {
+  width: 100%;
+  height: 30px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.formulaire_gestion_content form label {
+  font-size: 18px;
+  color: #2c8279;
+}
+.formulaire_gestion_content form textarea {
+  width: 100%;
+  height: 70px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  text-indent: 20px;
+  font-size: 15px;
+}
+.formulaire_gestion_content form button {
+  padding: 1px;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c8279;
+  cursor: pointer;
+}
+.formulaire_gestion_content form button p {
+  color: white;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+/*Panier Title*/
+.panier__title {
+  background-color: white;
+}
+.panier__title_content {
+  margin-top: 40px;
+  padding: 35px;
+}
+.panier__title_content h2 {
+  font-size: 50px;
+  color: #2c8279;
+}
+.panier__title_content span {
+  position: absolute;
+  width: 96%;
+  height: 1px;
+  background-color: #2c8279;
+}
+
+/*Footer*/
+.footer {
+  background-color: #f5f5dc;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+}
+.footer_links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+.footer_links a {
+  color: black;
+}
+.footer_medias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.footer_medias svg {
+  width: 30px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=styles.css.map */
